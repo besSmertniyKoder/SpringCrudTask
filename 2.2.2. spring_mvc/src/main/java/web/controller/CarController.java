@@ -8,9 +8,17 @@ import web.service.CarServiceImpl;
 
 @Controller
 public class CarController {
-    @GetMapping(value = "/cars")
-  public String showCars(@RequestParam("num") String num, ModelMap modelMap,int numb){
+    private CarServiceImpl carService = new CarServiceImpl();
 
-        return num;
+
+    @GetMapping(value = "/cars")
+    public String printCar(@RequestParam("count") int count, ModelMap model) {
+        if (count > 0 && count < 5) {
+            model.addAttribute("cars", carService.getCarByNum(count));
+        } else {
+            model.addAttribute("cars", carService.printCars());
+        }
+        return "cars";
+
     }
 }

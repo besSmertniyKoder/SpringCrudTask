@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>yo man how ya doin?</title>
+    <title>Cars</title>
 </head>
-<div>Cars</div>>
 <body>
-
+<table border="1">
+    <tr>
+    <tr th:block th:each="car : ${cars}">
+        <td th:text="${car.getBrand()}"></td>
+        <td th:text="${car.getLicensePlate()}"></td>
+        <td th:text="${car.getManufacturer()}"></td>
+    </tr>
+</table>
 </body>
 </html>
