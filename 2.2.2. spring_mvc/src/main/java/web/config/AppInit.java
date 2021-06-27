@@ -27,3 +27,6 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     }
 
 }
+
+//-Ты правда просто взял заготовку с прошлой задачи?
+//-Да.
